@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Clone</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="sidebar-header">
+      <h3>Chats</h3>
+      <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+    </div>
+
+    <input type="text" class="search" placeholder="Search" onkeyup="searchChat(this.value)">
+
+    <div class="chat" data-name="ansh" onclick="openChat('Ansh')">
+      <img src="https://i.pravatar.cc/40?img=3">
+      <div>
+        <h4>Ansh</h4>
+        <p id="last-Ansh">Tap to start chat</p>
+      </div>
+    </div>
+
+    <div class="chat" data-name="rahul" onclick="openChat('Rahul')">
+      <img src="https://i.pravatar.cc/40?img=2">
+      <div>
+        <h4>Rahul</h4>
+        <p id="last-Rahul">Tap to start chat</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CHAT AREA -->
+  <div class="chat-area">
+
+    <div class="chat-header">
+      <span id="chatHeader">Select Chat</span>
+      <button onclick="clearChat()">🗑</button>
+    </div>
+
+    <div class="messages" id="messages"></div>
+
+    <div class="typing" id="typing"></div>
+
+    <div class="emoji-panel" id="emojiPanel">
+      😀 😁 😂 😍 😎 😢 👍 ❤️ 🎉 🔥
+    </div>
+
+    <div class="input-area">
+
+      <button onclick="toggleEmoji()">😊</button>
+
+      <input type="text" id="msg" placeholder="Type a message">
+
+      <input type="file" id="imageInput" hidden onchange="sendImage()">
+      <button onclick="document.getElementById('imageInput').click()">📎</button>
+
+      <button onclick="startRecording()">🎤</button>
+
+      <button onclick="sendMsg()">➤</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
